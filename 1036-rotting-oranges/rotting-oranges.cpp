@@ -3,12 +3,10 @@ public:
     int orangesRotting(vector<vector<int>>& grid) {
         int n = grid.size();
         int m = grid[0].size();
-        // vector<vector<int>> visited(n, vector<int>(m, 0));
         queue<pair<int,pair<int,int>>> q;
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
                 if(grid[i][j] == 2){
-                    // visited[i][j] = 1;
                     q.push({0,{i,j}});
                 }
             }
@@ -28,7 +26,6 @@ public:
                 if(ni >= 0 && ni < n && nj >= 0 && nj < m && grid[ni][nj] == 1){
                     grid[ni][nj] = 2;
                     q.push({steps + 1, {ni, nj}});
-                    // visited[ni][nj] = 1;
                 }
             }
         }
