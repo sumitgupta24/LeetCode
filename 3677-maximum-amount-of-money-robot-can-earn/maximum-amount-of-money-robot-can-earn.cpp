@@ -9,7 +9,6 @@ public:
             if(coins[i][j] < 0 && count > 0) return 0;
             return coins[i][j];
         }
-
         int ans = INT_MIN;
 
         int right = solve(i, j + 1, count, coins, dp);
