@@ -1,13 +1,8 @@
 class Solution {
 public:
     void dfs(int node, int n, vector<vector<int>>& graph,vector<int>& temp, vector<vector<int>>& ans){
-        if(node == n - 1){
-            temp.push_back(node);
-            ans.push_back(temp);
-            temp.pop_back();
-            return;
-        }
         temp.push_back(node);
+        if(node == n - 1) ans.push_back(temp);
         for(auto& adjNode : graph[node]){
             dfs(adjNode, n, graph, temp, ans);
         }
