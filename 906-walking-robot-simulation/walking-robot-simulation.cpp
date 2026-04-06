@@ -2,9 +2,9 @@ class Solution {
 public:
     int robotSim(vector<int>& commands, vector<vector<int>>& obstacles) {
         int n = commands.size();
-        map<pair<int,int>, int> mpp;
+        set<pair<int,int>> st;
         for(auto& it: obstacles){
-            mpp[{it[0],it[1]}]++;
+            st.insert({it[0], it[1]});
         }
         int maxPoint = 0;
         int x = 0, y = 0;
@@ -16,22 +16,22 @@ public:
                 int k = commands[i];
                 if(dir == 0){
                     for(int j=0;j<k;j++){
-                        if(!mpp.count({x, y + 1})) y++;
+                        if(!st.count({x, y + 1})) y++;
                     }
                 }
                 else if(dir == 1){
                     for(int j=0;j<k;j++){
-                        if(!mpp.count({x - 1, y})) x--;
+                        if(!st.count({x - 1, y})) x--;
                     }
                 }
                 else if(dir == 2){
                     for(int j=0;j<k;j++){
-                        if(!mpp.count({x, y - 1})) y--;
+                        if(!st.count({x, y - 1})) y--;
                     }
                 }
                 else if(dir == 3){
                     for(int j=0;j<k;j++){
-                        if(!mpp.count({x + 1, y})) x++;
+                        if(!st.count({x + 1, y})) x++;
                     }
                 }
             }
