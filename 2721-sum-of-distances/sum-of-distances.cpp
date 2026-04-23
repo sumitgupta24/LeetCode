@@ -28,6 +28,7 @@ public:
             indexFreqCount[nums[i]] += 1;
             indexSum[nums[i]] += i;
         }
+        
         return arr;
     }
 };
