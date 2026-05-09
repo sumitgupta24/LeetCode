@@ -35,17 +35,9 @@ public:
             int size = arr.size();
             int temp = k;
             temp = temp % size;
-            // for(auto& it : arr) {
-            //     cout << it << " ";
-            // }
-            // cout << endl;
             reverse(arr.begin(), arr.end());
             reverse(arr.begin(), arr.begin() + temp);
             reverse(arr.begin() + temp, arr.end());
-            // for(auto& it : arr) {
-            //     cout << it << " ";
-            // }
-            // cout << endl;
             fillAgain(i, i, grid, arr);
         }
         
