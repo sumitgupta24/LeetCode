@@ -6,7 +6,7 @@ public:
         long long currMass = mass;
         for(int i = 0; i < n; i++) {
             if(currMass >= asteroids[i]) {
-                currMass += (long long)asteroids[i];
+                currMass += asteroids[i];
             }
             else return false;
         }
