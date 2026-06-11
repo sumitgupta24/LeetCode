@@ -12,8 +12,7 @@ public:
         return res;
     }
 
-    void dfs(int node, int parent, int depth,
-             vector<vector<int>>& adj, int& maxDepth) {
+    void dfs(int node, int parent, int depth, vector<vector<int>>& adj, int& maxDepth) {
         maxDepth = max(maxDepth, depth);
 
         for (int nei : adj[node]) {
