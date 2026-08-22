@@ -20,6 +20,6 @@ public:
 
     bool checkDivisibility(int n) {
         int sum = findDigitProductSum(n);
-        return n % sum == 0 ? true : false;
+        return !(n % sum);
     }
 };
