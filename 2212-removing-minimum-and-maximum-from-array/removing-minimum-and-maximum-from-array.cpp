@@ -19,9 +19,6 @@ public:
             }
         }
 
-        cout << mini.first << " " << mini.second << endl;
-        cout << maxi.first << " " << maxi.second << endl;
-
         int case1 = max(mini.second, maxi.second) + 1;
         int case2 = max(n - mini.second, n - maxi.second);
         int case3 = mini.second + n - maxi.second + 1;
