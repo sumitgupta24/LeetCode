@@ -19,7 +19,7 @@ public:
                         if(isValid(i, j, board, ch, n)) {
                             board[i][j] = ch;
                             if(solve(board, n)) return true;
-                            else board[i][j] = '.';
+                            board[i][j] = '.';
                         }
                     }
                     return false;
